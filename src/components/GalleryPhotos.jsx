@@ -85,8 +85,20 @@ export const GalleryPhotos = ({ imagesUrls, admin }) => {
           {showModal && (
             <div className="modalbackground">
                 <div className="divbutton">
-                  <div className="leftbutton" onClick={()=>{setPhotoIndex(photoIndex-1)}}></div>
-                  <div className="rightbutton" onClick={()=>{setPhotoIndex(photoIndex+1)}}></div>
+                  <div className="leftbutton" onClick={()=>{
+                    var prevIndex = photoIndex - 1;
+                    if(prevIndex < 0){
+                      prevIndex = images.length - 1;
+                    }
+                    setPhotoIndex(prevIndex);
+                  }}></div>
+                  <div className="rightbutton" onClick={()=>{
+                    var nextIndex = photoIndex + 1;
+                    if(nextIndex >= images.length){
+                      nextIndex = 0;
+                    }
+                    setPhotoIndex(nextIndex);
+                  }}></div>
                 </div>
               <button className="close-btn" onClick={() => setShowModal(false)}>
                 Fechar

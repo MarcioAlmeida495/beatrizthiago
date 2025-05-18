@@ -9,7 +9,7 @@ function App() {
 
   <div style={{maxWidth: 600, width: '100%',position: 'relative'}}>
   
-  <button className={`homefoto ${clicked ? '' : 'changepos'}`} onClick={()=>{setClicked(!clicked)}}>{clicked ? 'Início' : 'Fotos'}</button>
+  <button className={`homefoto ${clicked ? '' : 'changepos'}`} onClick={()=>{setClicked(!clicked)}}>{clicked ? 'Início' : <>{'Compartilhe seus momentos'}<img alt='addimg' src='./addimage.png' /></>}</button>
   { <QrCode expanded={!clicked}/>}
     <UploadPhotos className={`upphotos ${clicked ? 'expanded' : ''}`}/>
   </div> 
